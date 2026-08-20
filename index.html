@@ -1,1 +1,834 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Babu Store | General Variety Store</title> <style> * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Segoe UI", Arial, sans-serif; scroll-behavior: smooth; } :root { --green: #116530; --green2: #1b8a4b; --light: #eef9f1; --dark: #102a1b; --text: #2f3b34; --muted: #6b746f; --white: #ffffff; --gold: #f5b700; --border: #e5ebe7; } body { background: #f8fbf9; color: var(--text); line-height: 1.6; } /* ================= NAVBAR ================= */ header { position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,0.96); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); } .navbar { max-width: 1250px; margin: auto; padding: 16px 25px; display: flex; justify-content: space-between; align-items: center; gap: 25px; } .logo { font-size: 29px; font-weight: 800; color: var(--green); } .logo span { color: var(--dark); } nav { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; } nav a { text-decoration: none; color: var(--dark); font-weight: 600; transition: 0.25s; } nav a:hover { color: var(--green2); } /* ================= HERO ================= */ .hero { background: radial-gradient(circle at top right, rgba(117, 214, 147, 0.35), transparent 35%), linear-gradient(135deg, #e8f8ee, #ffffff); padding: 90px 25px 75px; overflow: hidden; } .hero-inner { max-width: 1250px; margin: auto; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 55px; align-items: center; } .small-label { display: inline-block; background: #d9f1df; color: var(--green); padding: 8px 15px; border-radius: 50px; font-size: 14px; font-weight: 800; margin-bottom: 18px; } .hero h1 { font-size: clamp(42px, 6vw, 70px); line-height: 1.04; color: var(--dark); margin-bottom: 18px; } .hero h1 span { color: var(--green2); } .hero-text { font-size: 19px; color: var(--muted); max-width: 650px; margin-bottom: 28px; } .hero-buttons { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 25px; } .btn { text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 22px; border-radius: 12px; font-weight: 800; transition: 0.25s; } .btn-primary { color: white; background: var(--green); box-shadow: 0 10px 25px rgba(17,101,48,0.22); } .btn-primary:hover { background: #0c4c24; transform: translateY(-3px); } .btn-light { color: var(--green); background: white; border: 2px solid #cfe3d5; } .btn-light:hover { background: #f1faf4; transform: translateY(-3px); } .hero-badges { display: flex; flex-wrap: wrap; gap: 10px; } .hero-badge { background: white; border: 1px solid var(--border); border-radius: 50px; padding: 8px 13px; font-size: 14px; color: var(--dark); box-shadow: 0 6px 18px rgba(0,0,0,0.05); } .store-visual { min-height: 390px; border-radius: 35px; background: linear-gradient(145deg, #0e5c2c, #2ca85d); position: relative; overflow: hidden; box-shadow: 0 30px 55px rgba(17,101,48,0.25); display: flex; align-items: center; justify-content: center; } .store-visual::before, .store-visual::after { content: ""; position: absolute; border-radius: 50%; background: rgba(255,255,255,0.10); } .store-visual::before { width: 280px; height: 280px; top: -80px; right: -60px; } .store-visual::after { width: 220px; height: 220px; bottom: -70px; left: -60px; } .store-emoji { font-size: 145px; position: relative; z-index: 2; filter: drop-shadow(0 12px 12px rgba(0,0,0,0.18)); } .visual-card { position: absolute; z-index: 3; left: 22px; right: 22px; bottom: 22px; background: rgba(255,255,255,0.96); border-radius: 18px; padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; gap: 15px; } .visual-card strong { color: var(--dark); display: block; font-size: 17px; } .visual-card span { color: var(--muted); font-size: 13px; } /* ================= SECTIONS ================= */ section { padding: 80px 25px; } .container { max-width: 1250px; margin: auto; } .section-heading { text-align: center; margin-bottom: 45px; } .section-heading h2 { font-size: 38px; color: var(--dark); margin-bottom: 8px; } .section-heading p { color: var(--muted); max-width: 650px; margin: auto; } /* ================= QUICK INFO ================= */ .quick-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; } .quick-card { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 24px; box-shadow: 0 10px 28px rgba(0,0,0,0.05); transition: 0.25s; } .quick-card:hover { transform: translateY(-6px); box-shadow: 0 18px 30px rgba(0,0,0,0.08); } .quick-icon { width: 52px; height: 52px; border-radius: 15px; background: var(--light); display: flex; align-items: center; justify-content: center; font-size: 25px; margin-bottom: 14px; } .quick-card h3 { color: var(--dark); margin-bottom: 6px; } .quick-card p { color: var(--muted); font-size: 14px; } /* ================= CATEGORIES ================= */ .category-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; } .category { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 28px 18px; text-align: center; box-shadow: 0 8px 22px rgba(0,0,0,0.05); transition: 0.25s; } .category:hover { transform: translateY(-7px); } .category-icon { font-size: 48px; margin-bottom: 12px; } .category h3 { color: var(--dark); margin-bottom: 4px; } .category p { color: var(--muted); font-size: 13px; } /* ================= PRODUCTS ================= */ .product-section { background: #f0f8f3; } .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; } .product { background: white; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.05); transition: 0.25s; } .product:hover { transform: translateY(-6px); } .product-top { padding: 30px; text-align: center; font-size: 55px; background: linear-gradient(135deg, #effaf2, #dff4e5); } .product-body { padding: 20px; } .product-body h3 { color: var(--dark); margin-bottom: 5px; } .product-body p { color: var(--muted); font-size: 14px; } /* ================= LOCATION ================= */ .location-wrap { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 25px; align-items: stretch; } .location-card, .map-card { background: white; border: 1px solid var(--border); border-radius: 24px; box-shadow: 0 12px 30px rgba(0,0,0,0.06); } .location-card { padding: 30px; } .location-card h3 { color: var(--dark); font-size: 28px; margin-bottom: 20px; } .location-item { display: flex; gap: 14px; margin: 17px 0; align-items: flex-start; } .location-item .icon { width: 42px; height: 42px; border-radius: 12px; background: var(--light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; } .location-item strong { display: block; color: var(--dark); } .location-item span { color: var(--muted); font-size: 14px; } .map-card { min-height: 390px; padding: 25px; background: linear-gradient(rgba(237,248,241,0.82), rgba(237,248,241,0.82)), repeating-linear-gradient( 45deg, #dfeee4, #dfeee4 10px, #e9f4ec 10px, #e9f4ec 20px ); display: flex; align-items: center; justify-content: center; text-align: center; } .map-pin { font-size: 82px; margin-bottom: 10px; } .map-card h3 { color: var(--dark); font-size: 28px; margin-bottom: 7px; } .map-card p { color: var(--muted); margin-bottom: 20px; } /* ================= ABOUT ================= */ .about { background: var(--dark); color: white; } .about-box { max-width: 900px; margin: auto; text-align: center; } .about-box h2 { font-size: 40px; margin-bottom: 18px; } .about-box p { color: #d5e2da; font-size: 18px; } .mission-box { margin-top: 28px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; padding: 22px; } .mission-box strong { display: block; margin-bottom: 7px; color: white; } /* ================= CONTACT ================= */ .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; } .contact-card { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 28px; text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,0.05); } .contact-card .big-icon { font-size: 40px; margin-bottom: 10px; } .contact-card h3 { color: var(--dark); margin-bottom: 8px; } .contact-card p { color: var(--muted); } .contact-link { color: var(--green); text-decoration: none; font-weight: 800; } /* ================= CTA ================= */ .cta { background: linear-gradient(135deg, #dff4e5, #f6fbf7); text-align: center; } .cta h2 { font-size: 40px; color: var(--dark); margin-bottom: 10px; } .cta p { color: var(--muted); margin-bottom: 23px; } .cta-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; } /* ================= FOOTER ================= */ footer { background: #081c11; color: white; text-align: center; padding: 32px 20px; } footer .footer-logo { font-size: 26px; font-weight: 800; margin-bottom: 8px; } footer p { color: #bfd0c5; margin: 4px 0; } /* ================= MOBILE ================= */ @media (max-width: 950px) { .hero-inner, .location-wrap { grid-template-columns: 1fr; } .quick-grid, .category-grid, .product-grid { grid-template-columns: repeat(2, 1fr); } .contact-grid { grid-template-columns: 1fr; } .store-visual { min-height: 320px; } } @media (max-width: 650px) { .navbar { flex-direction: column; } nav { gap: 14px; } .quick-grid, .category-grid, .product-grid { grid-template-columns: 1fr; } .hero { padding-top: 55px; } .hero-buttons { flex-direction: column; } .btn { width: 100%; } .store-visual { min-height: 280px; } .store-emoji { font-size: 100px; } .visual-card { left: 12px; right: 12px; bottom: 12px; } } </style> </head> <body> <!-- ================= NAVBAR ================= --> <header> <div class="navbar"> <div class="logo"> Local<span>Find</span> </div> <nav> <a href="#home">Home</a> <a href="#store-info">Store</a> <a href="#categories">Categories</a> <a href="#products">Products</a> <a href="#location">Location</a> <a href="#contact">Contact</a> </nav> </div> </header> <!-- ================= HERO ================= --> <section class="hero" id="home"> <div class="hero-inner"> <div> <div class="small-label"> 🏪 GENERAL VARIETY STORE </div> <h1> Welcome to <span>Babu Store</span> </h1> <p class="hero-text"> Your local destination for everyday essentials, grocery items, household needs and more. Find us easily in Rourkela. </p> <div class="hero-buttons"> <a href="https://maps.app.goo.gl/7wQv83wAAsErxweu9" target="_blank" class="btn btn-primary" > 📍 Get Directions </a> <a href="tel:9937072699" class="btn btn-light" > 📞 Call Store </a> </div> <div class="hero-badges"> <div class="hero-badge">🛒 Daily Essentials</div> <div class="hero-badge">🕒 11 AM – 10:30 PM</div> <div class="hero-badge">📍 Rourkela</div> </div> </div> <div class="store-visual"> <div class="store-emoji">🛒</div> <div class="visual-card"> <div> <strong>Babu Store</strong> <span>General Variety Store</span> </div> <div>⭐ Local Store</div> </div> </div> </div> </section> <!-- ================= STORE INFO ================= --> <section id="store-info"> <div class="container"> <div class="section-heading"> <h2>Everything You Need to Know</h2> <p> Quick information about Babu Store. </p> </div> <div class="quick-grid"> <div class="quick-card"> <div class="quick-icon">🏪</div> <h3>Store Type</h3> <p> General Variety Store </p> </div> <div class="quick-card"> <div class="quick-icon">🕒</div> <h3>Opening Hours</h3> <p> 11:00 AM – 10:30 PM </p> </div> <div class="quick-card"> <div class="quick-icon">📞</div> <h3>Phone</h3> <p> <a href="tel:9937072699" class="contact-link" > 9937072699 </a> </p> </div> <div class="quick-card"> <div class="quick-icon">📍</div> <h3>Area</h3> <p> Rourkela, Odisha </p> </div> </div> </div> </section> <!-- ================= CATEGORIES ================= --> <section id="categories"> <div class="container"> <div class="section-heading"> <h2>Shop Categories</h2> <p> Everyday categories that can be featured at the store. </p> </div> <div class="category-grid"> <div class="category"> <div class="category-icon">🛒</div> <h3>Groceries</h3> <p>Daily grocery essentials</p> </div> <div class="category"> <div class="category-icon">🍪</div> <h3>Snacks</h3> <p>Biscuits and packaged snacks</p> </div> <div class="category"> <div class="category-icon">🥛</div> <h3>Dairy</h3> <p>Everyday dairy products</p> </div> <div class="category"> <div class="category-icon">🧴</div> <h3>Household</h3> <p>Useful household products</p> </div> <div class="category"> <div class="category-icon">🍚</div> <h3>Grains</h3> <p>Rice and other essentials</p> </div> <div class="category"> <div class="category-icon">🧼</div> <h3>Daily Needs</h3> <p>Personal and home essentials</p> </div> <div class="category"> <div class="category-icon">🥤</div> <h3>Beverages</h3> <p>Drinks and refreshments</p> </div> <div class="category"> <div class="category-icon">📦</div> <h3>Other Items</h3> <p>Various useful products</p> </div> </div> </div> </section> <!-- ================= PRODUCTS ================= --> <section class="product-section" id="products"> <div class="container"> <div class="section-heading"> <h2>Popular Product Categories</h2> <p> Product categories can be updated according to the actual items available at Babu Store. </p> </div> <div class="product-grid"> <div class="product"> <div class="product-top">🍚</div> <div class="product-body"> <h3>Rice & Grains</h3> <p> Everyday kitchen essentials. </p> </div> </div> <div class="product"> <div class="product-top">🍪</div> <div class="product-body"> <h3>Biscuits & Snacks</h3> <p> Popular snack and food items. </p> </div> </div> <div class="product"> <div class="product-top">🥛</div> <div class="product-body"> <h3>Dairy Products</h3> <p> Common daily-use dairy items. </p> </div> </div> <div class="product"> <div class="product-top">🧴</div> <div class="product-body"> <h3>Household Needs</h3> <p> Useful items for everyday life. </p> </div> </div> </div> </div> </section> <!-- ================= LOCATION ================= --> <section id="location"> <div class="container"> <div class="section-heading"> <h2>Find Babu Store</h2> <p> Open the exact Google Maps location and get directions. </p> </div> <div class="location-wrap"> <div class="location-card"> <h3>📍 Store Information</h3> <div class="location-item"> <div class="icon">🏪</div> <div> <strong>Store Name</strong> <span>Babu Store</span> </div> </div> <div class="location-item"> <div class="icon">🏷️</div> <div> <strong>Store Type</strong> <span>General Variety Store</span> </div> </div> <div class="location-item"> <div class="icon">📍</div> <div> <strong>Location</strong> <span>Rourkela, Odisha</span> </div> </div> <div class="location-item"> <div class="icon">🕒</div> <div> <strong>Opening Hours</strong> <span>11:00 AM – 10:30 PM</span> </div> </div> <div class="location-item"> <div class="icon">📞</div> <div> <strong>Phone</strong> <span>9937072699</span> </div> </div> <br> <a href="https://maps.app.goo.gl/7wQv83wAAsErxweu9" target="_blank" class="btn btn-primary" > 🗺️ Open Google Maps </a> </div> <div class="map-card"> <div> <div class="map-pin">📍</div> <h3>Babu Store</h3> <p> Rourkela, Odisha </p> <a href="https://maps.app.goo.gl/7wQv83wAAsErxweu9" target="_blank" class="btn btn-light" > View Store Location </a> </div> </div> </div> </div> </section> <!-- ================= ABOUT ================= --> <section class="about"> <div class="container"> <div class="about-box"> <h2>About Babu Store</h2> <p> Babu Store is presented through LocalFind as a local general variety store in Rourkela. This website gives customers an easy way to discover store information and locate the shop. </p> <div class="mission-box"> <strong>LocalFind Project Aim</strong> To create a simple location-based website that connects customers with nearby local grocery shops and helps small shop owners establish an online presence. </div> </div> </div> </section> <!-- ================= CONTACT ================= --> <section id="contact"> <div class="container"> <div class="section-heading"> <h2>Contact Babu Store</h2> <p> Get in touch or visit the store. </p> </div> <div class="contact-grid"> <div class="contact-card"> <div class="big-icon">📞</div> <h3>Call the Store</h3> <p> <a href="tel:9937072699" class="contact-link" > 9937072699 </a> </p> </div> <div class="contact-card"> <div class="big-icon">🕒</div> <h3>Opening Hours</h3> <p> 11:00 AM – 10:30 PM </p> </div> <div class="contact-card"> <div class="big-icon">📍</div> <h3>Store Location</h3> <p> Rourkela, Odisha </p> </div> </div> </div> </section> <!-- ================= CTA ================= --> <section class="cta"> <div class="container"> <h2>Ready to Visit Babu Store?</h2> <p> Call the store or open the location in Google Maps. </p> <div class="cta-buttons"> <a href="https://maps.app.goo.gl/7wQv83wAAsErxweu9" target="_blank" class="btn btn-primary" > 📍 Get Directions </a> <a href="tel:9937072699" class="btn btn-light" > 📞 Call 9937072699 </a> </div> </div> </section> <!-- ================= FOOTER ================= --> <footer> <div class="footer-logo"> LocalFind </div> <p> Find Local. Shop Local. </p> <p> Babu Store • General Variety Store • Rourkela, Odisha </p> <p> © 2026 LocalFind. All Rights Reserved. </p> </footer> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shivani Workshop | Furniture</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f8f5ef;
+    color:#302018;
+}
+
+/* NAVIGATION */
+
+header{
+    background:#21150f;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    color:#d9a15b;
+    font-size:25px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#d9a15b;
+}
+
+/* HERO */
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    padding:50px 7%;
+
+    background:
+    linear-gradient(rgba(30,18,10,.72),rgba(30,18,10,.72)),
+    url("https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1600&q=80");
+
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#e2a45d;
+}
+
+.hero p{
+    font-size:21px;
+    margin-bottom:30px;
+}
+
+.button{
+    display:inline-block;
+    background:#c48643;
+    color:white;
+    padding:14px 28px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    margin:5px;
+}
+
+.button:hover{
+    background:#9b6028;
+}
+
+.button.white{
+    background:white;
+    color:#302018;
+}
+
+/* SECTIONS */
+
+section{
+    padding:80px 7%;
+}
+
+.title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:50px;
+}
+
+.title span{
+    color:#bd7936;
+}
+
+/* ABOUT */
+
+.about{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+.about p{
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+/* FURNITURE */
+
+.furniture-section{
+    background:#eee4d5;
+}
+
+.furniture{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+}
+
+.product{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+    transition:.3s;
+    cursor:pointer;
+}
+
+.product:hover{
+    transform:translateY(-10px);
+}
+
+.product-image{
+    height:220px;
+    background:#d8c2a8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.placeholder{
+    text-align:center;
+    color:#65452f;
+}
+
+.placeholder .emoji{
+    font-size:70px;
+    display:block;
+    margin-bottom:10px;
+}
+
+.product-info{
+    padding:25px;
+    text-align:center;
+}
+
+.product-info h3{
+    font-size:24px;
+    margin-bottom:8px;
+}
+
+.product-info p{
+    color:#666;
+}
+
+.click-text{
+    color:#bd7936;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+/* POPUP */
+
+.popup{
+    display:none;
+    position:fixed;
+    z-index:2000;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.85);
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.popup-content{
+    background:white;
+    width:90%;
+    max-width:700px;
+    border-radius:15px;
+    overflow:hidden;
+    text-align:center;
+    position:relative;
+}
+
+.popup-image{
+    height:450px;
+    background:#e5d2bb;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.popup-image .big-emoji{
+    font-size:150px;
+}
+
+.popup-info{
+    padding:25px;
+}
+
+.popup-info h2{
+    margin-bottom:10px;
+    color:#302018;
+}
+
+.close{
+    position:absolute;
+    right:15px;
+    top:10px;
+    font-size:35px;
+    color:white;
+    cursor:pointer;
+    background:#302018;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    line-height:40px;
+}
+
+/* SERVICES */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.service{
+    background:white;
+    padding:35px 20px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.service-icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+/* CONTACT */
+
+.contact-section{
+    background:#302018;
+    color:white;
+}
+
+.contact{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+}
+
+.contact p{
+    font-size:18px;
+    margin:15px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#170e09;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+footer span{
+    color:#d9a15b;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav a{
+        margin:0 6px;
+        font-size:14px;
+    }
+
+    .hero{
+        text-align:center;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .popup-image{
+        height:300px;
+    }
+
+    .popup-image .big-emoji{
+        font-size:100px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<header>
+
+<div class="logo">
+🪵 Shivani Workshop
+</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#furniture">Furniture</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>
+Crafting <span>Beautiful Furniture</span>
+</h1>
+
+<p>
+Quality furniture made with care, skill and craftsmanship.
+</p>
+
+<a href="#furniture" class="button">
+View Furniture
+</a>
+
+<a href="#contact" class="button white">
+Visit Workshop
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="title">
+About <span>Us</span>
+</h2>
+
+<div class="about">
+
+<p>
+Welcome to <strong>Shivani Workshop</strong>.
+</p>
+
+<p>
+We create quality furniture for homes and living spaces.
+Our workshop specializes in beds, sofas, tables, chairs and wardrobes.
+</p>
+
+<p>
+We focus on strong construction, beautiful designs and
+furniture made according to your requirements.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- FURNITURE -->
+
+<section class="furniture-section" id="furniture">
+
+<h2 class="title">
+Our <span>Furniture</span>
+</h2>
+
+<div class="furniture">
+
+
+<!-- BED -->
+
+<div class="product" onclick="openPopup('bed')">
+
+<div class="product-image">
+
+<div class="placeholder">
+
+<span class="emoji">🛏️</span>
+
+<strong>Bed</strong>
+
+</div>
+
+</div>
+
+<div class="product-info">
+
+<h3>🛏️ Beds</h3>
+
+<p>Comfortable and strong beds.</p>
+
+<div class="click-text">
+Click to view →
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SOFA -->
+
+<div class="product" onclick="openPopup('sofa')">
+
+<div class="product-image">
+
+<div class="placeholder">
+
+<span class="emoji">🛋️</span>
+
+<strong>Sofa</strong>
+
+</div>
+
+</div>
+
+<div class="product-info">
+
+<h3>🛋️ Sofas</h3>
+
+<p>Stylish and comfortable sofas.</p>
+
+<div class="click-text">
+Click to view →
+</div>
+
+</div>
+
+</div>
+
+
+<!-- TABLE -->
+
+<div class="product" onclick="openPopup('table')">
+
+<div class="product-image">
+
+<div class="placeholder">
+
+<span class="emoji">🪵</span>
+
+<strong>Table</strong>
+
+</div>
+
+</div>
+
+<div class="product-info">
+
+<h3>🪵 Tables</h3>
+
+<p>Strong and beautiful tables.</p>
+
+<div class="click-text">
+Click to view →
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CHAIR -->
+
+<div class="product" onclick="openPopup('chair')">
+
+<div class="product-image">
+
+<div class="placeholder">
+
+<span class="emoji">🪑</span>
+
+<strong>Chair</strong>
+
+</div>
+
+</div>
+
+<div class="product-info">
+
+<h3>🪑 Chairs</h3>
+
+<p>Comfortable and stylish chairs.</p>
+
+<div class="click-text">
+Click to view →
+</div>
+
+</div>
+
+</div>
+
+
+<!-- WARDROBE -->
+
+<div class="product" onclick="openPopup('wardrobe')">
+
+<div class="product-image">
+
+<div class="placeholder">
+
+<span class="emoji">🚪</span>
+
+<strong>Wardrobe</strong>
+
+</div>
+
+</div>
+
+<div class="product-info">
+
+<h3>🚪 Wardrobes</h3>
+
+<p>Spacious wardrobes for your home.</p>
+
+<div class="click-text">
+Click to view →
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- POPUP -->
+
+<div class="popup" id="popup">
+
+<div class="popup-content">
+
+<div class="close" onclick="closePopup()">
+×
+</div>
+
+<div class="popup-image">
+
+<div class="big-emoji" id="popupEmoji">
+🛏️
+</div>
+
+</div>
+
+<div class="popup-info">
+
+<h2 id="popupTitle">
+Beds
+</h2>
+
+<p id="popupDescription">
+Beautiful and comfortable beds made by Shivani Workshop.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<h2 class="title">
+Our <span>Services</span>
+</h2>
+
+<div class="services">
+
+<div class="service">
+
+<div class="service-icon">🔨</div>
+
+<h3>Custom Furniture</h3>
+
+<p>
+Furniture made according to your requirements.
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="service-icon">🪵</div>
+
+<h3>Quality Woodwork</h3>
+
+<p>
+Carefully crafted wooden furniture.
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="service-icon">📐</div>
+
+<h3>Custom Designs</h3>
+
+<p>
+Choose your preferred size and design.
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="service-icon">🏠</div>
+
+<h3>Home Furniture</h3>
+
+<p>
+Furniture solutions for your home.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact-section" id="contact">
+
+<div class="contact">
+
+<h2 class="title">
+Visit <span>Shivani Workshop</span>
+</h2>
+
+<p>
+📍 9V7P+23M, Naharakanta Rd, Odisha 754001
+</p>
+
+<p>
+🕘 Opening Time: <strong>9:00 AM</strong>
+</p>
+
+<p>
+📞 Phone: <strong>Coming Soon</strong>
+</p>
+
+<a
+class="button"
+href="https://www.google.com/maps/search/?api=1&query=9V7P%2B23M%2C%20Naharakanta%20Rd%2C%20Odisha%20754001"
+target="_blank">
+
+📍 Open in Google Maps
+
+</a>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 <span>Shivani Workshop</span>
+</p>
+
+<p>
+Furniture made with care 🪵
+</p>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function openPopup(type){
+
+    const popup = document.getElementById("popup");
+    const emoji = document.getElementById("popupEmoji");
+    const title = document.getElementById("popupTitle");
+    const description = document.getElementById("popupDescription");
+
+    if(type === "bed"){
+
+        emoji.innerHTML = "🛏️";
+        title.innerHTML = "Beds";
+        description.innerHTML =
+        "Beautiful and comfortable beds made by Shivani Workshop.";
+
+    }
+
+    if(type === "sofa"){
+
+        emoji.innerHTML = "🛋️";
+        title.innerHTML = "Sofas";
+        description.innerHTML =
+        "Stylish and comfortable sofas for your living room.";
+
+    }
+
+    if(type === "table"){
+
+        emoji.innerHTML = "🪵";
+        title.innerHTML = "Tables";
+        description.innerHTML =
+        "Strong and beautiful tables made for your home.";
+
+    }
+
+    if(type === "chair"){
+
+        emoji.innerHTML = "🪑";
+        title.innerHTML = "Chairs";
+        description.innerHTML =
+        "Comfortable and stylish chairs made with care.";
+
+    }
+
+    if(type === "wardrobe"){
+
+        emoji.innerHTML = "🚪";
+        title.innerHTML = "Wardrobes";
+        description.innerHTML =
+        "Spacious wardrobes designed for your home.";
+
+    }
+
+    popup.style.display = "flex";
+}
+
+
+function closePopup(){
+
+    document.getElementById("popup").style.display = "none";
+
+}
+
+
+/* Close popup when clicking outside */
+
+window.onclick = function(event){
+
+    const popup = document.getElementById("popup");
+
+    if(event.target === popup){
+
+        popup.style.display = "none";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
+<img src="images/bed.jpg" alt="Shivani Workshop Bed">
